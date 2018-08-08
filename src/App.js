@@ -1,15 +1,49 @@
 import React, { Component } from 'react';
-import logo from './logo_transparent.png';
-import './App.css';
+import logo from './images/logo_transparent.png';
+import './css/App.css';
+import { Navbar, NavbarBrand, NavbarBrandProps, NavItem, Nav,NavDropdown,MenuItem} from 'react-bootstrap';
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      results: {}
+    }
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">This site is under construction</h1>
-        </header>
-        <body> 
+      <div >
+        {/* <PageHeader className="App-header">
+          This site is under construction
+        </PageHeader> */}
+        <Navbar inverse collapseOnSelect>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <a href="#brand">Techster Solutions</a>
+            </Navbar.Brand>
+            <Navbar.Toggle />
+          </Navbar.Header>  
+          <Navbar.Collapse>
+            <Nav>
+              <NavItem eventKey={1} href="#">
+                Home
+              </NavItem>
+              <NavItem eventKey={2} href="#">
+                Our Services
+              </NavItem>
+            </Nav>
+            <Nav pullRight>
+              <NavItem eventKey={1} href="#">
+                About Us
+              </NavItem>
+              <NavItem eventKey={2} href="#">
+                Contact Us
+              </NavItem>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+        <body className="App"> 
           <img src={logo} alt="logo" />
         </body>
       </div>
