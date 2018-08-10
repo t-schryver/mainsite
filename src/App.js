@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './images/logo_transparent.png';
 import './css/App.css';
+import SimpleMap from '../src/components/SimpleMap'
 import { Navbar, NavbarBrand, NavbarBrandProps, NavItem, Nav,NavDropdown,MenuItem} from 'react-bootstrap';
 
 class App extends Component {
@@ -43,9 +44,22 @@ class App extends Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-        <body className="App"> 
-          <img src={logo} alt="logo" />
-        </body>
+        <div>
+          <p style={{textAlign:'center'}}>THIS PAGE IS UNDER CONSTRUCTION</p>
+        </div>
+        <div>
+          <SimpleMap />
+        </div>
+        <div className="App"> 
+          <img src={logo} alt="logo" className="responsive"/>
+        </div>
+        <Navbar inverse>
+          <Nav>
+            <NavItem >
+              © {new Date().getFullYear()} Techster Solutions. All Rights Reserved
+            </NavItem>
+          </Nav>
+        </Navbar>
       </div>
     );
   }
