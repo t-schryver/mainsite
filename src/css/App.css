@@ -27,6 +27,10 @@
   to { transform: rotate(360deg); }
 }
 
+@-ms-viewport{
+  width: device-width;
+}
+
 .responsive {
   width: 100%;
   height: auto;
