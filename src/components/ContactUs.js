@@ -32,7 +32,7 @@ export default class ContactUs extends React.Component{
         <div>
           <span style={{fontFamily:'Cabin Sketch', fontSize:'36px', fontWeight: '400', color: '#333333'}}>Contact Us </span>
         </div>
-        <form>
+        <form >
           <p>Please get in touch with us by filling out our contact form below.
              The more details you can provide about your interests or requirements,
               the more value we can provide in following up! Thank you.</p>
