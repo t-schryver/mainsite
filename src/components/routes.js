@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { Router, Switch } from 'react-router';
-import { Route, Redirect, NavLink } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 import history from '../history'
+import Header from '../components/Header';
 import Home from '../components/Home';
+import OurServices from '../components/OurServices';
 import AboutUs from '../components/AboutUs';
 import ContactUs from '../components/ContactUs';
-import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export function routes() {
@@ -16,19 +17,14 @@ export function routes() {
             <div>
                 <Header />
                 <Switch>
-                    <Route exact={true} path="/home" component={Home} />
-                    {
-                        // This path must always be last
-                    }
-                    <Route exact={true} path="/contactus" component={ContactUs} />
-                    {
-                        // This path must always be last
-                    }
+                    <Route exact={true} path="/mainsite" component={Home} />
+                    <Route exact={true} path="/ourservices" component={OurServices} />
                     <Route exact={true} path="/aboutus" component={AboutUs} />
-                    {
-                        // This path must always be last
-                    }
-                    <Route path="/*" render={(props) => <Redirect to="/home" />} />
+                    <Route exact={true} path="/contactus" component={ContactUs} />
+                    
+                    
+                    {/* // This path must always be last */}
+                    <Route path="/*" render={(props) => <Redirect to="/mainsite" />} />
                 </Switch>
                 <Footer />
             </div>
