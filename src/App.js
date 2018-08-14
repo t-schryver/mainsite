@@ -7,13 +7,9 @@ const AppWithRouter = withRouter(routes);
 class App extends Component {
   render() {   
     return (
-      <div>
-        <div>
-        <BrowserRouter>
-          <AppWithRouter {...this.props} />
-        </BrowserRouter>
-        </div>
-      </div>
+      <BrowserRouter>
+        <AppWithRouter {...this.props} />
+      </BrowserRouter>
     );
   }
 }
