@@ -3,32 +3,33 @@ import logo from '../images/linkedin_banner_image_2.png';
 import '../css/App.css';
 import SimpleMap from './SimpleMap';
 import {FormGroup, Form, ControlLabel, InputGroup, FormControl, HelpBlock} from 'react-bootstrap'
-// import { Form, Text, Scope } from 'informed';
+import Zoom from 'react-reveal/Zoom';
+import Rotate from 'react-reveal/Rotate';
+import Swing from 'react-reveal/Swing';
+
 
 export default class ContactUs extends React.Component{
   constructor(props) {
     super(props);
     this.state = {value: ''};
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
+  handleChange = () => {
+    this.setState((prevState, props) => {
+      return {value:!prevState.value}});
   }
 
-  handleSubmit(event) {
+  handleSubmit = () => {
     alert('A name was submitted: ' + this.state.value);
-    event.preventDefault();
   }
   
-
   render() {
     return (
       <div >
         <div>
-          <SimpleMap />
+          <Zoom>
+            <SimpleMap />
+          </Zoom>
         </div>
         <div className="col col-lg-12" style={{padding: '5px 25px 35px 50px'}}>
           <div className="col-sm-8" style={{padding: '5px 10px 10px 10px'}}>
@@ -37,14 +38,18 @@ export default class ContactUs extends React.Component{
             </div>  
             <div className="">
               <Form>
-                <p>Please get in touch with us by filling out our contact form below.
-                  The more details you can provide about your interests or requirements,
-                  the more value we can provide in following up! Thank you.
-                </p>
+                <Rotate bottom-left>
+                  <p>Please get in touch with us by filling out our contact form below.
+                    The more details you can provide about your interests or requirements,
+                    the more value we can provide in following up! Thank you.
+                  </p>
+                </Rotate>
                 <FormGroup
                   controlId="formName"
                 >
+                <Swing>
                   <ControlLabel>Name*</ControlLabel>
+                </Swing>
                   <FormControl
                     type="text"
                     placeholder="Enter name"
@@ -55,7 +60,9 @@ export default class ContactUs extends React.Component{
                 <FormGroup
                   controlId="formEmail"
                 >
+                <Swing>
                   <ControlLabel>Email*</ControlLabel>
+                </Swing>
                   <InputGroup>
                     <InputGroup.Addon>@</InputGroup.Addon>
                     <FormControl
@@ -69,7 +76,9 @@ export default class ContactUs extends React.Component{
                 <FormGroup
                   controlId="formSubject"
                 >
+                <Swing>
                   <ControlLabel>Subject</ControlLabel>
+                </Swing>
                   <FormControl
                     type="text"
                     placeholder="Enter Subject"
@@ -78,8 +87,8 @@ export default class ContactUs extends React.Component{
                   <HelpBlock>Enter a subject to better inform us.</HelpBlock>
                 </FormGroup>
                 <div className="form-group">
-                  <label for="comment">Your Message:</label>
-                  <textarea class="form-control" rows="5" id="comment"></textarea>
+                  <label htmlFor="comment">Your Message:</label>
+                  <textarea className="form-control" rows="5" id="comment"></textarea>
                 </div>
                 <br/>
                 <button className='btn btn-primary btn-md'>Submit</button>
@@ -110,9 +119,11 @@ export default class ContactUs extends React.Component{
             </p>
           </div>
         </div>
+        <Zoom>
         <div className="App"> 
           <img src={logo} alt="logo" className="responsive"/>
         </div>
+        </Zoom>
       </div>
     );
   }

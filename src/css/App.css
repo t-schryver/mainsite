@@ -35,3 +35,62 @@
   width: 100%;
   height: auto;
 }
+
+.example-date {
+    background-color: #987;
+    float: right;
+    position: relative;
+    padding: 45px 5px 0px;
+    margin-left: 10px;
+}
+
+.example-date .example-year {
+  transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  
+}
+
+.example-date .example-month {
+  text-transform: uppercase;
+  font-size: 25px;
+}
+
+.example-date .example-day {
+  font-size: 45px;
+  line-height: 45px;
+  position: absolute;
+  left: 5px;
+  top: 0px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Bahiana');
+
+body {
+  margin:0;
+  padding: 0;
+  overflow-x:hidden;
+  font-family: 'Slabo 27px', serif;
+  background-color: lightgrey;
+}
+
+h1,h2,h3 {
+  font-family: 'Bahiana', cursive !important;
+}
+
+.navbar {
+  margin-bottom:0
+}
+
+.vidContainer {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
